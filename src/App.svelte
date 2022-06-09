@@ -6,9 +6,9 @@
   import Choropleth from './lib/Choropleth.svelte';
   import Pointmap from './lib/Pointmap.svelte';
 
-  const countryDataPath = "./src/assets/data/polygons_adm0.json";
-  const choroplethDataPath = "./src/assets/data/choropleth_data.json";
-  const pointDataPath = "./src/assets/data/point_data.json";
+  const countryDataPath = "./data/polygons_adm0.json";
+  const choroplethDataPath = "./data/choropleth_data.json";
+  const pointDataPath = "./data/point_data.json";
 
   $: if ($dataStore.loaded_countryData && $dataStore.loaded_choroplethData && $dataStore.loaded_pointData) {
     console.log("Alle Daten geladen");
@@ -76,5 +76,19 @@
     text-align: center;
     padding: 1em;
     margin: 0 auto;
+  }
+
+  :global(.info) {
+      padding: 6px 8px;
+      font: 14px/16px Arial, Helvetica, sans-serif;
+      background: white;
+      background: rgba(255,255,255,0.8);
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      border-radius: 5px;
+  }
+
+  :global(.info h4) {
+      margin: 0 0 5px;
+      color: #777;
   }
 </style>
