@@ -4,6 +4,7 @@
     import { onMount } from 'svelte';
     import { dataStore } from '../stores/dataStore.js';
     import { joinData, createGeoJson, createInfo } from '../stores/helperFunctions.js';
+    import Attribution from './submodules/Attribution.svelte';
     let countryData = $dataStore.countryData;
     let choroplethData = JSON.parse(JSON.stringify(countryData));
     let filterCountriesIncluded;
@@ -28,9 +29,10 @@
   
   <style>
       #map {
-        height: calc(100vh - 100px);
+        height: calc(100vh - 130px);
         background-color: #eee;
       }
   </style>
   
   <div id="map" class="map" />
+  <Attribution />
